@@ -11,7 +11,7 @@ function DisplayBusinessList(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Business List', page: 'business-list', businesses: businessesCollection });
+        res.render('index', { title: 'Business List', page: 'business-list', businesses: businessesCollection, displayName: '' });
     });
 }
 exports.DisplayBusinessList = DisplayBusinessList;

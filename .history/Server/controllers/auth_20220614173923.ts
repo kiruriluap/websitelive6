@@ -79,5 +79,6 @@ export function ProcessLogoutPage(req: express.Request, res: express.Response, n
 {
     req.logOut();
 
-    res.redirect('/login');    
+    res.redirect
+    
 }

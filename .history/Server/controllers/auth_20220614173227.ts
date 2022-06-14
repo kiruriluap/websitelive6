@@ -56,28 +56,11 @@ export function ProcessRegisterPage(req: express.Request, res: express.Response,
     {
         if(err)
         {
-            if(err.name =="UserExistsError")
-            {
-                console.error('ERROR: User Already Exists!');
-                req.flash('registerMessage', 'Registration Error!');
-            }
-            else
-            {
-
-            console.error(err.name);
-            req.flash('registerMessage', 'Server Error!');            
-            }
-            return res.redirect('/register')
+            if(err.name =="UserExis")
         }
-        return passport.authenticate('local')(req, res, function()
-        {
-            return res.redirect('/business-list')
-        });
-    });
+    })
 };
 export function ProcessLogoutPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    req.logOut();
-
-    res.redirect('/login');    
+    
 }

@@ -23,6 +23,6 @@ router.get('/services', DisplayServicesPage);
 router.get('/contact', DisplayContactPage);
 
 /**/
-
+router.get('/business-list',DisplayBusinessList)
 
 export default router;

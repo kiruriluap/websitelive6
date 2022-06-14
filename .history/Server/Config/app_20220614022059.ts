@@ -40,7 +40,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-//use routes
 app.use('/', indexRouter);
 app.use('/', businessListRouter);
 

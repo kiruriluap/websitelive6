@@ -5,13 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DisplayBusinessList = void 0;
 const business_1 = __importDefault(require("../Models/business"));
+const Util_1 = require("../../Util");
 function DisplayBusinessList(req, res, next) {
     business_1.default.find(function (err, businessesCollection) {
         if (err) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Business List', page: 'business-list', businesses: businessesCollection, displayName: '' });
+        res.render('index', { title: 'Business List', page: 'business-list', businesses: businessesCollection, displayName: (0, Util_1.UserDisplayName)(req) });
     });
 }
 exports.DisplayBusinessList = DisplayBusinessList;

@@ -12,13 +12,13 @@ export function DisplayAboutPage(req: express.Request, res: express.Response, ne
 }
 export function DisplayProjectsPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', { title: 'Projects', page: 'projects', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Projects', page: 'projects', displayName: '' });
 }
 export function DisplayServicesPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', { title: 'Services', page: 'services', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Services', page: 'services', displayName: '' });
 }
 export function DisplayContactPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    res.render('index', { title: 'Contact Me', page: 'contact', displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Contact Me', page: 'contact', displayName: '' });
 }

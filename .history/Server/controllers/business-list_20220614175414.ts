@@ -2,8 +2,6 @@ import express from 'express';
 
 import Business from '../Models/business';
 
-import { UserDisplayName } from '../../Util';
-
 export function DisplayBusinessList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     Business.find(function(err, businessesCollection)
@@ -13,6 +11,6 @@ export function DisplayBusinessList(req: express.Request, res: express.Response,
             console.error(err);
             res.end(err);
         }
-        res.render('index',{title: 'Business List', page: 'business-list', businesses: businessesCollection, displayName: UserDisplayName(req)});
+        res.render('index',{title: 'Business List', page: 'business-list', businesses: businessesCollection, displayName: '});
     });
 }

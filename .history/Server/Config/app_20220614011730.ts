@@ -12,12 +12,11 @@ import indexRouter from '../Routes/index';
 
 const app = express();
 
-//step 2-DB configuration
+//DB configuration
 import * as DBConfig from './db';
 mongoose.connect(DBConfig.LocalURI);
-const db = mongoose.connection;// alias for the connection
 
-//step 3- listen for connections or errors
+const db = mongoose.connection;// alias for the connection
 db.on("open", function()
 {
   console.log('Connected to MongoDB at: ${DBConfig.HostName}');

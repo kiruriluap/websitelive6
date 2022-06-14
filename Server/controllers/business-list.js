@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DisplayBusinessList = void 0;
-const Business_1 = __importDefault(require("../Models/Business"));
+const business_1 = __importDefault(require("../Models/business"));
 function DisplayBusinessList(req, res, next) {
-    Business_1.default.find(function (err, businessesCollection) {
+    business_1.default.find(function (err, businessesCollection) {
         if (err) {
             console.error(err);
             res.end(err);

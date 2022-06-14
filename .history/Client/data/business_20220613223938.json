@@ -1,0 +1,22 @@
+{"business contact view":
+    [
+       {
+        "Name": "Ford Doug ",
+        "Year" : "1964",
+        "Position": "Premier",
+        "Telephone": "4167621587"
+        },
+        {
+            "Name": "John Tory ",
+            "Year" : "1954",
+            "Position": "Mayor",
+            "Telephone": "6478523614"
+            },
+            {
+                "Name": "Justin Trudeau ",
+                "Year" : "1964",
+                "Position": "Premier",
+                "Telephone": "4167621587"
+                }
+    
+    ]}

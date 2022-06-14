@@ -20,29 +20,7 @@ export function DisplayRegisterPage(req: express.Request, res: express.Response,
 //processing
 export function ProcessLoginPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    passport.authenticate('local', function(err, user, info)
-    {
-        if(err)
-        {
-            console.error(err);
-            res.end(err);
-        }
-        if(!user)
-        {
-            req.flash('loginMessage', 'Authentication Error, Try again!');
-            return res.redirect('./login');
-        }
-        req.login(user, function(err)
-        {
-            if(err)
-            {
-            console.error(err);
-            res.end(err);
-        }
-        return res.redirect('/business-list');
-    });
-        
-    }) (req, res, next);
+    passport.authenticate('local', function)
 }
 export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {

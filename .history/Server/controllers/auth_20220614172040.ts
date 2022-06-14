@@ -32,17 +32,8 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
             req.flash('loginMessage', 'Authentication Error, Try again!');
             return res.redirect('./login');
         }
-        req.login(user, function(err)
-        {
-            if(err)
-            {
-            console.error(err);
-            res.end(err);
-        }
-        return res.redirect('/business-list');
-    });
-        
-    }) (req, res, next);
+        req.login(user, function(err))
+    })
 }
 export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {

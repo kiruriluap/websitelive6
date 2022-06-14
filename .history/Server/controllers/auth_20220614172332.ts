@@ -40,9 +40,9 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
             res.end(err);
         }
         return res.redirect('/business-list');
-    });
+    })
         
-    }) (req, res, next);
+    });
 }
 export function ProcessRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {

@@ -85,7 +85,8 @@ export function ProcessLogoutPage(req: express.Request, res: express.Response, n
             res.end(err);
         }
         console.log("user logged off");
-    }  
+    }
+    
     );
 
     res.redirect('/login');    

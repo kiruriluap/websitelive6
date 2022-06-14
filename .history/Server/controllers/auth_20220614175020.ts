@@ -82,10 +82,11 @@ export function ProcessLogoutPage(req: express.Request, res: express.Response, n
         if(err)
         {
             console.error(err);
-            res.end(err);
+            res.end
         }
         console.log("user logged off");
-    }  
+    }
+    
     );
 
     res.redirect('/login');    

@@ -22,7 +22,6 @@ export function DisplayServicesPage(req: express.Request, res: express.Response,
 {
     res.render('index', { title: 'Services', page: 'services', displayName: UserDisplayName(req) });
 }
-
 export function DisplayContactPage(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     res.render('index', { title: 'Contact Me', page: 'contact', displayName: UserDisplayName(req) });

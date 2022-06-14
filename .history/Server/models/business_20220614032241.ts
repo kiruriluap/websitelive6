@@ -8,7 +8,7 @@ const BusinessSchema = new Schema
 
     Name: String,
     Number: String,
-    Address: String
+    Address: email
 },
 {
     collection:"businesses"

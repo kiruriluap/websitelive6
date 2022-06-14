@@ -2,13 +2,13 @@ import express from 'express';
 const router = express.Router();
 
 //import the controller module
-import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectsPage, DisplayServicesPage} from "../controllers/index";
+import {DisplayAboutPage, DisplayContactPage, DisplayLoginPage, DisplayProjectsPage, DisplayServicesPage} from "../controllers/auth";
 
 /* Display home page. */
-router.get('/', DisplayHomePage);
+router.get('/', DisplayLoginPage);
 
 /* Display home page. */
-router.get('/home', DisplayHomePage);
+router.get('/home', DisplayLoginPage);
 
 /* Display about page. */
 router.get('/about', DisplayAboutPage);

@@ -31,7 +31,7 @@ const app = express();
 
 // Complete the DB Configuration
 import * as DBConfig from './db';
-//mongoose.connect(DBConfig.RemoteURI);
+mongoose.connect(DBConfig.RemoteURI);
 mongoose.connect(DBConfig.LocalURI);
 const db = mongoose.connection; // alias for the mongoose connection
 

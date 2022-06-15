@@ -16,7 +16,7 @@ function DisplayLoginPage(req, res, next) {
 exports.DisplayLoginPage = DisplayLoginPage;
 function DisplayRegisterPage(req, res, next) {
     if (!req.user) {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+        return res.render('index/list', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
     }
     return res.redirect('/business-list');
 }

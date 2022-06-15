@@ -24,15 +24,14 @@ import User from '../Models/user';
 
 // import the router data
 import indexRouter from '../Routes/index'; // top-level routes
-import movieListRouter from '../Routes/business-list'; // movie-list routes
+import movieListRouter from '../Routes/movie-list'; // movie-list routes
 import authRouter from '../Routes/auth'; // authentication routes
 
 const app = express();
 
 // Complete the DB Configuration
 import * as DBConfig from './db';
-//mongoose.connect(DBConfig.RemoteURI);
-mongoose.connect(DBConfig.LocalURI);
+mongoose.connect(DBConfig.RemoteURI);
 const db = mongoose.connection; // alias for the mongoose connection
 
 // Listen for Connections or Errors

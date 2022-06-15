@@ -44,13 +44,13 @@ const business_list_1 = __importDefault(require("../Routes/business-list"));
 const auth_1 = __importDefault(require("../Routes/auth"));
 const app = (0, express_1.default)();
 const DBConfig = __importStar(require("./db"));
-mongoose_1.default.connect(DBConfig.LocalURI);
+mongoose_1.default.connect(DBConfig.RemoteURI);
 const db = mongoose_1.default.connection;
 db.on("open", function () {
     console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
 });
 db.on("error", function () {
-    console.error(`Connection error`);
+    console.error(`Connection Error`);
 });
 app.set('views', path_1.default.join(__dirname, '../Views'));
 app.set('view engine', 'ejs');

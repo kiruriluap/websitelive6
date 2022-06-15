@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.ProcessLoginPage = exports.DisplayRegisterPage = exports.DisplayLoginPage = void 0;
+exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.ProcessLoginPage = exports.DisplayEditPage = exports.DisplayAddPage = exports.DisplayRegisterPage = exports.DisplayLoginPage = void 0;
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../Models/user"));
 const Util_1 = require("../../Util");
@@ -21,6 +21,20 @@ function DisplayRegisterPage(req, res, next) {
     return res.redirect('/business-list');
 }
 exports.DisplayRegisterPage = DisplayRegisterPage;
+function DisplayAddPage(req, res, next) {
+    if (!req.user) {
+        return res.render('index/list', { title: 'Add', page: 'add', messages: req.flash('addMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+    }
+    return res.redirect('/add');
+}
+exports.DisplayAddPage = DisplayAddPage;
+function DisplayEditPage(req, res, next) {
+    if (!req.user) {
+        return res.render('index/list', { title: 'Edit', page: 'edit', messages: req.flash('editMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+    }
+    return res.redirect('/edit');
+}
+exports.DisplayEditPage = DisplayEditPage;
 function ProcessLoginPage(req, res, next) {
     passport_1.default.authenticate('local', function (err, user, info) {
         if (err) {

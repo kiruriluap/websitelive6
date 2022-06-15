@@ -11,5 +11,9 @@ router.get('/register', auth_1.DisplayRegisterPage);
 router.post('/login', auth_1.ProcessLoginPage);
 router.post('/register', auth_1.ProcessRegisterPage);
 router.get('/logout', auth_1.ProcessLogoutPage);
+router.get('/add', auth_1.DisplayAddPage);
+router.get('/edit', auth_1.DisplayEditPage);
+router.post('/add', auth_1.DisplayAddPage);
+router.post('/edit', auth_1.DisplayEditPage);
 exports.default = router;
 //# sourceMappingURL=auth.js.map

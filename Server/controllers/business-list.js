@@ -17,7 +17,7 @@ function DisplayBusinessList(req, res, next) {
 }
 exports.DisplayBusinessList = DisplayBusinessList;
 function DisplayAddList(req, res, next) {
-    res.render('index', { title: 'add Business List', page: 'add', displayName: (0, Util_1.UserDisplayName)(req) });
+    res.render('index', { title: 'add Business List', page: 'edit', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayAddList = DisplayAddList;
 function ProcessAddList(req, res, next) {

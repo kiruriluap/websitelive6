@@ -44,7 +44,7 @@ Routes_1.default.get('/edit:id', (req, res, next) => {
             res.end(err);
         }
         else {
-            res.render('edit', { title: 'Edit Business List', page: businessListToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
+            res.render('edit', { title: 'Edit Business List', businessList: businessListToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
         }
     });
 });

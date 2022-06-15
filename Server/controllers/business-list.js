@@ -3,10 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayBusinessList = void 0;
+exports.ProcessAddList = exports.DisplayAddList = exports.DisplayBusinessList = void 0;
 const business_1 = __importDefault(require("../Models/business"));
 const Util_1 = require("../../Util");
-const Routes_1 = __importDefault(require("../Routes"));
 function DisplayBusinessList(req, res, next) {
     business_1.default.find(function (err, businessesCollection) {
         if (err) {
@@ -17,66 +16,24 @@ function DisplayBusinessList(req, res, next) {
     });
 }
 exports.DisplayBusinessList = DisplayBusinessList;
-Routes_1.default.get('/add', (req, res, next) => {
-    res.render('add', { title: 'Add Business List', page: 'business-list', displayName: (0, Util_1.UserDisplayName)(req) });
-});
-Routes_1.default.get('/add', (req, res, next) => {
-    let newBusinessList = BusinessList({
-        "name": req.body.name,
-        "number": req.body.number,
-        "address": req.body.address
+function DisplayAddList(req, res, next) {
+    res.render('index', { title: 'add Business List', page: 'add', displayName: (0, Util_1.UserDisplayName)(req) });
+}
+exports.DisplayAddList = DisplayAddList;
+function ProcessAddList(req, res, next) {
+    let newBusiness = new business_1.default({
+        "Name": req.body.username,
+        "Number": req.body.number,
+        "email": req.body.emailAddress
     });
-    BusinessList.create(newBusinessList, (err, BusinessList) => {
+    business_1.default.create(newBusiness, function (err) {
         if (err) {
-            console.log(err);
+            console.error(err);
             res.end(err);
         }
-        else {
-            res.redirect('business-list');
-        }
+        res.redirect('/business-list');
     });
-});
-Routes_1.default.get('/edit:id', (req, res, next) => {
-    let id = req.params.id;
-    BusinessList.findById(id, (err, businessListToEdit) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.render('edit', { title: 'Edit Business List', businessList: businessListToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
-        }
-    });
-});
-Routes_1.default.post('/edit:id', (req, res, next) => {
-    let id = req.params.id;
-    let updatedBusinessList = BusinessList({
-        "_id": id,
-        "name": req.body.name,
-        "number": req.body.number,
-        "address": req.body.address
-    });
-    BusinessList.updateOne({ _id: id }, updatedBusinessList, (err) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.redirect('business-list');
-        }
-    });
-    ;
-});
-Routes_1.default.get('/delete:id', (req, res, next) => {
-    let id = req.params.id;
-    BusinessList.remove({ _id: id }, (err) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.redirect('business-list');
-        }
-    });
-});
+}
+exports.ProcessAddList = ProcessAddList;
+;
 //# sourceMappingURL=business-list.js.map
